@@ -1,0 +1,64 @@
+\documentclass[8pt]{beamer}
+
+%设置风格模板
+%\usetheme{Malmoe}        
+%\usetheme{CambridgeUS}        
+%\usetheme{Dresden}        
+%\usetheme{Darmstadt}        
+\usetheme{Boadilla}        
+%\usetheme{Frankfurt}        
+%\usetheme{Madrid}        
+%\usetheme{Montpellier}        
+
+\usecolortheme{default}         
+
+%设置页面大小
+\usepackage[size=a4]{beamerposter}
+\setbeamertemplate{navigation symbols}{}
+
+%日期格式
+\renewcommand{\today}{\number\year-\number\month-\number\day}
+
+%设置首页信息
+\input{title.tex}
+
+%设置字体
+\usepackage{xeCJK}                   % 设置中英文字体
+\setCJKmainfont[Mapping=tex-text,BoldFont={WenQuanYi Micro Hei},ItalicFont={AR PL UKai CN}]{AR PL SungtiL GB} % 中文字体
+\setCJKsansfont{AR PL SungtiL GB}
+\setCJKmonofont{AR PL SungtiL GB}
+\setmainfont{Times New Roman}        % 英文衬线字体
+\setromanfont{Courier New}
+\setsansfont{Droid Sans}             % 英文无衬线字体
+\setmonofont{Courier New}            % 英文等宽字体
+\XeTeXlinebreaklocale "zh"           % 中文自动换行
+\XeTeXlinebreakskip = 0pt plus 1pt   % 字之间加0pt至1pt间距
+\linespread{1.1}\selectfont          % 行距
+%\parindent 0em                       % 段缩进
+%\setlength{\parskip}{20pt}           % 段间距
+
+%设置代码段背景色
+\usepackage{color}
+\let\oldv\verbatim
+\let\oldendv\endverbatim
+\def\verbatim{\par\setbox0\vbox\bgroup\oldv}
+\def\endverbatim{\oldendv\egroup\fboxsep0pt \noindent\colorbox[gray]{0.9}{\usebox0}\par}
+
+%设置代码段字体
+\makeatletter
+\def\verbatim@font{\footnotesize\rmfamily\hyphenchar\font\m@ne\@noligs}
+\makeatother
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\begin{itemize}
+\item   \footnotesize\url{\website}
+\end{itemize}
+
+\end{frame}
+
+\input{"content.tex"}
+
+\end{document}
