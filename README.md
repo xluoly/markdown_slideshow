@@ -19,3 +19,14 @@ $ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # WenQuanYi中文字体
 ```
 $ make
 ```
+
+## 新增一个项目
+
+    $ make newproj M=name
+
+然后修改Makefile, 在MODULES中增加该项目的目录名称，如：
+
+    MODULES += name 
+
+这样就可以执行`make`编译了。
+

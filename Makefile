@@ -1,4 +1,4 @@
-.PHONY: all clean 
+.PHONY: all clean newproj
 
 MODULES += demo
 
@@ -9,6 +9,10 @@ PROJ_DIR  = $(TOP_DIR)/projects
 
 SUB_BUILD = $(addprefix $(BUILD_DIR)/, $(MODULES))
 SLIDE_PDF = $(addsuffix /slide.pdf, $(SUB_BUILD))
+
+ifndef M
+	M = newproj
+endif
 
 all: $(SUB_BUILD) $(SLIDE_PDF)
 
@@ -34,11 +38,15 @@ $(BUILD_DIR)/%/slide.tex: template/slide.tex
 		xelatex slide.tex && \
 		sed -n -e '/\\title{.\+}/p' title.tex | \
 	   	sed -e 's,\\title{,"$(DIST_DIR)/,g' -e 's/}/.pdf"/g' | \
-		xargs cp slide.pdf
-	@echo "copy slide.pdf to $(DIST_DIR)"
+		xargs cp -v slide.pdf
 
 clean:
 	@echo "remove $(BUILD_DIR)"
 	@rm -rf $(BUILD_DIR)
 
+newproj:
+	@mkdir -p $(PROJ_DIR)/$(M)/figures
+	@cp template/title.tex $(PROJ_DIR)/$(M)/title.tex
+	@touch $(PROJ_DIR)/$(M)/content.md
+	@echo "Create new project: $(PROJ_DIR)/$(M)"
 
