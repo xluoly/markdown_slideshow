@@ -1,19 +1,4 @@
-
-## 内容大纲
-* Markdown格式简介
-	- 标题
-	- 列表
-    - 字体
-    - 链接
-	- 正文 
-    - 代码引用
-    - 图片
-    - 数学公式
-* 幻灯片格式
-* 转换工具使用
-    - 工具的安装
-    - 使用范例
-	
+# 标题
 ## Markdown 标题层次
 * 一级/二级/三级/四级  
 
@@ -34,6 +19,7 @@
 --------
 ~~~
 
+# 列表
 ## 无序列表
 
 使用星号(*)
@@ -111,6 +97,7 @@
     1. 桂林
     2. 南宁
 
+# 字体和段落
 ## Markdown字体 
 
 ~~~
@@ -129,23 +116,12 @@ __double underscores as bold__
 
 - **注意**：中文没有 **黑体** 和 _斜体_ 的概念。虽然可以用文泉译微黑等字体模拟黑体效果，但是这不是正规的中文排版方式。
 
-## 超链接
-
-~~~
-欢迎访问我的[Github](https://github.com/xluoly)  
-欢迎访问我的Github\(<https://github.com/xluoly>\)  
-~~~
-
-输出效果：
-
-欢迎访问我的[Github](https://github.com/xluoly)  
-欢迎访问我的Github\(<https://github.com/xluoly>\)  
-
 ## 换行  
 
 在行尾输入2个空格，  
 就可以实现换行功能
 
+# 代码引用
 ## 代码段
 
 使用一对三个反引号(键盘左上角\`)或三个波浪号(\~)，可以引用大段的代码保持原有缩进格式 
@@ -188,19 +164,95 @@ call `printf()` function
 
 call `printf()` function
 
-## 内嵌图片
+# 超链接和图片
+## 超链接
 
 ~~~
-![](./figures/markdown_logo.jpg)
+欢迎访问我的[Github](https://github.com/xluoly)  
+欢迎访问我的Github\(<https://github.com/xluoly>\)  
 ~~~
 
 输出效果：
 
-![](./figures/markdown_logo.jpg)
+欢迎访问我的[Github](https://github.com/xluoly)  
+欢迎访问我的Github\(<https://github.com/xluoly>\)  
 
-## 数学公式
+## 内嵌图片
 
-支持latex数学公式
+~~~
+![](markdown_logo.jpg)
+~~~
+
+输出效果：
+
+![](markdown_logo.jpg)
+
+# 表格
+## 表格
+
+~~~
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+~~~
+
+输出效果：
+
+  Right     Left     Center     Default
+-------     ------ ----------   -------
+     12     12        12            12
+    123     123       123          123
+      1     1          1             1
+
+
+## 表格
+
+- 省略标题栏
+
+~~~
+
+-------     ------ ----------   -------
+     12     12        12             12
+    123     123       123           123
+      1     1          1              1
+-------     ------ ----------   -------
+~~~
+
+输出效果：
+
+-------     ------ ----------   -------
+     12     12        12             12
+    123     123       123           123
+      1     1          1              1
+-------     ------ ----------   -------
+
+## 表格
+
+- 也可以写成这样
+
+~~~
+
+Right | Left | Center | Default
+-----:|:-----|:------:|---------
+12    | 12   | 12     | 12
+123   | 123  | 123    | 123
+1     | 1    | 1      | 1
+~~~
+
+输出效果：
+
+Right | Left | Center | Default
+-----:|:-----|:------:|---------
+12    | 12   | 12     | 12
+123   | 123  | 123    | 123
+1     | 1    | 1      | 1
+
+
+# 数学公式
+## 行内公式
 
 - 行内公式包在\$和\$之间
 
@@ -213,6 +265,8 @@ call `printf()` function
 
     行内公式 $\int_0^1 \sum_{i=1}^n f(x_i, \theta) d\theta$  
     $a^{(2)}$ 正确，$a^(2)$ 错误，分式 $\frac{a}{b}$
+
+## 独立公式
 
 - 独立公式 (displayed formula) 包在\$\$和\$\$之间
 
@@ -231,7 +285,7 @@ call `printf()` function
 
 ## 特殊字符
 
-如果需要显示下面这些符号，需要在它们的前面在一个反斜杠（\）:
+如果需要显示下面这些符号，需要在它们的前面加一个反斜杠(\\):
 
     \   反斜线
     `   反引号
@@ -247,6 +301,7 @@ call `printf()` function
     !   惊叹号
     $   美元符
 
+# 幻灯片制作过程
 ## 编辑幻灯片
 
 - 只需要写二级标题和三级标题就可以了，每个二级标题将生成一页幻灯片，二级标题就会变成该页幻灯片的标题
@@ -275,9 +330,9 @@ call `printf()` function
     $ sudo apt-get install pandoc
     $ sudo apt-get install texlive-xetex
     $ sudo apt-get install texlive-latex-recommended
-    $ sudo apt-get install texlive-fronts-recommended
+    $ sudo apt-get install texlive-fonts-recommended
     $ sudo apt-get install texlive-latex-extra
-    $ sudo apt-get install fonts-arphic-gbsn00lp fronts-arphic-ukai # arphic 
+    $ sudo apt-get install fonts-arphic-gbsn00lp fonts-arphic-ukai # arphic 
     $ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # WenQuanYi中文字体
 
     ~~~
@@ -304,5 +359,5 @@ call `printf()` function
 
 ## Thanks
 
-![](./figures/question.jpg)
+![](question.jpg)
 

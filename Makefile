@@ -23,6 +23,7 @@ $(SUB_BUILD):
 $(DIST_DIR):
 	mkdir -p $@
 
+#.SECONDEXPANSION:
 $(BUILD_DIR)/%.tex: $(PROJ_DIR)/%.md
 	pandoc -t beamer --slide-level 2 $< -o $@
 
