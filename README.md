@@ -12,6 +12,20 @@
     $ sudo apt-get install fonts-arphic-gbsn00lp fonts-arphic-ukai # arphic 
     $ sudo apt-get install ttf-wqy-microhei ttf-wqy-zenhei # WenQuanYi中文字体
 
+Ubuntu 14.04环境下工作正常，但是Ubuntu 12.04默认安装的pandoc和texlive-xetex版本太低，会遇到各种问题，升级pandoc和texlive-xetex版本可以解决。
+
+### Ubuntu 12.04安装pandoc 1.12
+
+    $ sudo add-apt-repository -y ppa:marutter/c2d4u
+    $ sudo apt-get update
+    $ sudo apt-get install pandoc 
+
+### Ubuntu 12.04安装TeX Live 2012
+
+    $ sudo add-apt-repository ppa:texlive-backports/ppa
+    $ sudo apt-get update
+    $ sudo apt-get install texlive-xetex texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+
 
 ## 编译
 
