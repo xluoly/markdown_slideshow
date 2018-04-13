@@ -37,7 +37,7 @@ Ubuntu 14.04环境下工作正常，但是Ubuntu 12.04默认安装的pandoc和te
 
 运行如下命令：
 
-    $ make newproj M=proj_name
+    $ make create P=proj_name
 
 
 ### 修改幻灯片标题等

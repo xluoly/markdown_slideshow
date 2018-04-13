@@ -1,4 +1,4 @@
-.PHONY: all clean newproj
+.PHONY: all clean create
 
 MODULES += demo
 
@@ -10,8 +10,14 @@ PROJ_DIR  = $(TOP_DIR)/projects
 SUB_BUILD = $(addprefix $(BUILD_DIR)/, $(MODULES))
 SLIDE_PDF = $(addsuffix /slide.pdf, $(SUB_BUILD))
 
-ifndef M
-	M = newproj
+ifeq ("$(origin M)", "command line")
+    MODULES := $(M)
+endif
+
+ifeq ("$(origin P)", "command line")
+    PROJECT = $(P)
+else
+    PROJECT = new_project_name
 endif
 
 all: $(SUB_BUILD) $(SLIDE_PDF)
@@ -45,9 +51,9 @@ clean:
 	@echo "remove $(BUILD_DIR)"
 	@rm -rf $(BUILD_DIR)
 
-newproj:
-	@mkdir -p $(PROJ_DIR)/$(M)/figures
-	@cp template/title.tex $(PROJ_DIR)/$(M)/title.tex
-	@touch $(PROJ_DIR)/$(M)/content.md
-	@echo "Create new project: $(PROJ_DIR)/$(M)"
+create:
+	@mkdir -p $(PROJ_DIR)/$(PROJECT)/figures
+	@cp template/title.tex $(PROJ_DIR)/$(PROJECT)/title.tex
+	@touch $(PROJ_DIR)/$(PROJECT)/content.md
+	@echo "project created:\n\t$(PROJ_DIR)/$(PROJECT)"
 

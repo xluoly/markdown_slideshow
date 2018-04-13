@@ -1,16 +1,16 @@
 \documentclass[8pt]{beamer}
 
 %设置风格模板
-%\usetheme{Malmoe}        
-%\usetheme{CambridgeUS}        
-%\usetheme{Dresden}        
-%\usetheme{Darmstadt}        
-\usetheme{Boadilla}        
-%\usetheme{Frankfurt}        
-%\usetheme{Madrid}        
-%\usetheme{Montpellier}        
+%\usetheme{Malmoe}
+%\usetheme{CambridgeUS}
+%\usetheme{Dresden}
+%\usetheme{Darmstadt}
+%\usetheme{Boadilla}
+%\usetheme{Frankfurt}
+\usetheme{Madrid}
+%\usetheme{Montpellier}
 
-\usecolortheme{default}         
+\usecolortheme{default}
 
 \usepackage{caption}
 \usepackage{longtable}
@@ -21,7 +21,7 @@
 \setbeamertemplate{navigation symbols}{}
 
 %日期格式
-\renewcommand{\today}{\number\year-\number\month-\number\day}
+\renewcommand{\today}{\footnotesize\number\year-\number\month-\number\day}
 
 %设置首页信息
 \input{title.tex}
@@ -73,9 +73,9 @@
 \def\verbatim@font{\footnotesize\ttfamily\hyphenchar\font\m@ne\@noligs}
 \makeatother
 
-\makeatletter 
-\def\fnum@table{\tablename~\thetable} 
-\makeatother 
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
 
 % 插入图片
 \usepackage{graphicx}
@@ -125,18 +125,19 @@
 \AtBeginSection[]
 {
     \begin{frame}<beamer>
-        \frametitle{提纲}
+        \frametitle{Agenda}
         \setcounter{tocdepth}{2}
         \tableofcontents[currentsection,currentsubsection]
     \end{frame}
 }
+
 % 在每个Subsection前都会加入的Frame
 \AtBeginSubsection[]
 {
     \begin{frame}<beamer>
         %\begin{frame}<handout:0>
         % handout:0 表示只在手稿中出现
-        \frametitle{提纲}
+        \frametitle{Agenda}
         \setcounter{tocdepth}{2}
         \tableofcontents[currentsection,currentsubsection]
         % 显示在目录中加亮的当前章节
@@ -155,16 +156,16 @@
 
 \begin{frame}
 \titlepage
-\begin{itemize}
-\item   \footnotesize\url{\website}
-\end{itemize}
+%\begin{itemize}
+%\item   \footnotesize\url{\website}
+%\end{itemize}
 \end{frame}
 
-\begin{frame}[plain]
-    \frametitle{提纲}
-    \setcounter{tocdepth}{2}
-    \tableofcontents
-\end{frame}
+%\begin{frame}[plain]
+%    \frametitle{Agenda}
+%    \setcounter{tocdepth}{2}
+%    \tableofcontents
+%\end{frame}
 
 \input{"content.tex"}
 
