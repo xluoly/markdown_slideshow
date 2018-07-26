@@ -1,6 +1,14 @@
 .PHONY: all clean create
 
 MODULES += demo
+MODULES += writing_with_markdown
+MODULES += svn_introduction
+MODULES += git_quick_start
+MODULES += git_commands
+MODULES += gitlab_workflow
+MODULES += makefile_introduction
+MODULES += video_broken_issue
+MODULES += android_camera_api2
 
 TOP_DIR   = $(PWD)
 BUILD_DIR = $(TOP_DIR)/build

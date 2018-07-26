@@ -359,5 +359,5 @@ Right | Left | Center | Default
 
 ## Thanks
 
-![](question.jpg)
+![](question.png)
 
